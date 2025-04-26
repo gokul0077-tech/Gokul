@@ -1,0 +1,102 @@
+
+.skill-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
+}
+.grid-card{
+    border: 2px solid black;
+    border-radius: 3rem;
+    padding: 7rem 7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: left;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.grid-card:hover{
+    transform: scale(1.02);
+    background-color: black;
+    color: white;
+}
+.grid-card i{
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+.grid-card span{
+    font-size: 2rem;
+    font-weight: 600;
+    background: linear-gradient(to right,#009dff, #ff00ff);
+    background-clip: text;
+    color: transparent;
+}
+.rects{
+    border: 2px solid black;
+    border-radius: 3rem;
+    width: 100%;
+    max-width: 600px;
+    padding: 5rem 2rem;
+}
+.rect-title{
+    position: relative;
+    font-size: 3rem;
+    font-weight: 500;
+}
+.rect-name{
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+.rect-bar{
+    height: 14px;
+    background-color: rgb(170, 179, 188);
+    border-radius: 3px;
+}
+.rect-per{
+    height: 14px;
+    background: linear-gradient(to right, rgb(0,157,255), rgb(255,0,255));
+    border-radius: 3px;
+    position: relative;
+    animation: fillBars 2.5s 1;
+}
+.rect-per::before{
+    color: #000000;
+    content: attr(par);
+    position: absolute;
+    padding: 4px 6px;
+    background: rgb(170, 179, 188);
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    top: -35px;
+    right: 0;
+    transform: translateX(50%);
+}
+.rect-per::after{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background:  rgb(170, 179, 188);
+    top: -20px;
+    right: 0;
+    transform: translateX(50%) rotate(45deg);
+    border-radius: 2px;
+}
+@keyframes fillBars{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
